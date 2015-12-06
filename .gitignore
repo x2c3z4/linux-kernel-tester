@@ -1,2 +1,3 @@
-initramfs_data.cpio.gz
-rootfs.img
+*.cpio.gz
+*.img
+*.qcow2

@@ -1,15 +1,15 @@
-#!/bin/sh
+#!/bin/bash
 #./run.sh ~/devel/linux i386
 kernel_path=$1 #~/linux
-arch=$2 #x86_64
-kernel=$kernel_path/arch/$2/boot/bzImage
+arch=x86_64
+[[ $2 != "" ]] && arch=$2
+kernel=$kernel_path/arch/$arch/boot/bzImage
 initrd=`pwd`/initramfs_data.cpio.gz
-rootfs=debian.qcow2
+rootfs=debian.img
 
 #extra="-drive file=rootfs.img,media=disk" #-hda rootfs.img
 #extra=-enable-kvm
-#extra="-redir tcp:3333::22"
-extra=
+extra="-redir tcp:3333::22"
 exec_name=qemu-system-$arch
 #network="-net nic,model=e1000,vlan=0 -net tap,ifname=tap0,vlan=0,script=no"
 #network="-net nic,model=virtio -net tap,ifname=tap0,script=no,downscript=no,vhost=on"

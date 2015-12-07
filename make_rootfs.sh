@@ -1,5 +1,7 @@
+#!/bin/bash
 #i386 amd64
-arch=$1
+arch=amd64
+[[ $1 != "" ]] && arch=$1
 #apt-get install ubuntu-dev-tools && mk-sbuild --arch=amd64 jessie
 dd if=/dev/zero of=rootfs.img bs=1 count=0 seek=3000M
 mkfs.ext4 -b 4096 -F rootfs.img

@@ -1,3 +1,4 @@
 *.cpio.gz
 *.img
 *.qcow2
+*.ftrace
